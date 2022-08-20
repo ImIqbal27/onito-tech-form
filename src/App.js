@@ -65,13 +65,17 @@ function App() {
       }}  
 
      
-        onSubmit={(values)=>{
+        onSubmit={(values, { resetForm })=>{
 
           var newFormData = [...formData, values];
           setFormData(newFormData);
           toast.success("Successfully added !", {
             position: toast.POSITION.TOP_CENTER
           });
+          resetForm();
+          
+
+
           console.log(formData);
            }}>
 
@@ -84,7 +88,7 @@ function App() {
               <label>Name<Star /></label>
               <Field type="text" name="personalDetails.name" id="name" placeholder="Enter Name" />
               <CErrorMessage name="personalDetails.name"  />
-              
+
               <label>Date of Birth or Age<Star /></label>
               <Field type="text" name="personalDetails.age" placeholder="DD/MM/YYYY  or Age in Years" id="ageField"/>  
               <CErrorMessage  name="personalDetails.age" /> 
