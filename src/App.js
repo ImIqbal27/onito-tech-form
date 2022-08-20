@@ -3,6 +3,7 @@ import { Formik , Form , Field   } from 'formik';
 import * as yup from 'yup';
 import CErrorMessage from './components/CErrorMessage';
 import Star from './components/Star';
+import { useEffect, useState } from 'react';
 
 
 const validateSchema = yup.object({ 
@@ -16,7 +17,13 @@ const validateSchema = yup.object({
 })
 
 function App() {
- 
+  const [formData, setFormData] = useState([]);
+
+  useEffect(() => {
+    setFormData(formData)
+
+}, [formData]);
+
 
   return (
     <div>
@@ -58,8 +65,9 @@ function App() {
      
         onSubmit={(values)=>{
 
-          
-           console.log(values);
+          var newFormData = [...formData, values];
+          setFormData(newFormData);
+           console.log(formData);
            }}>
 
           {(values)=>(
@@ -218,7 +226,84 @@ function App() {
           )}
       </Formik>
 
+      <br />  <br />
+{/* ********************************** Table Data ********************************************* */}
+<legend class="text-center"> User Information  </legend>
+<table  class="table table-striped table-bordered table-hover table-dark">
+  
+  <thead>
+    <tr>
+     <th>Sl</th>
+     <th>Name</th>
+     <th>Age</th>
+     <th>Sex</th>
+     <th>Mobile</th>
+     <th>Govt Issued ID  Type</th>
+     <th>Govt Issued ID </th>
+     {/* **** */}
+     <th>Guardian Level</th>
+     <th>Guardian Name</th>
+     <th>Guardian Email</th>
+     <th>Guardian Contact Number</th>
+     <th>Address</th>
+     <th>State</th>
+     <th>City</th>
+     <th>Country</th>
+     <th>Pincode</th>
+     {/* ****** */}
+     <th>Occupation</th>
+     <th>Religion</th>
+     <th>Marital Status</th>
+     <th>Blood Group</th>
+     <th>Nationality</th>
 
+     {/* ***** */}
+    </tr>
+
+  </thead>
+  {formData && formData?.map((data, index) =>
+
+
+<tbody >
+    <tr>
+        <td>{index + 1}</td>
+        {/* *********Personal details************* */}
+        <td>{data.personalDetails.name}</td>
+        <td>{data.personalDetails.age}</td>
+        <td>{data.personalDetails.sex}</td>
+        <td>{data.personalDetails.mobile}</td>
+        <td>{data.personalDetails.govtIssuedIdType}</td>
+        <td>{data.personalDetails.govtIssuedId}</td>
+       {/* ***************Contact details************ */}
+
+       <td>{data.contactDetails.guardianLevel}</td>
+       <td>{data.contactDetails.guardianName}</td>
+      <td>{data.contactDetails.email}</td>
+      <td>{data.contactDetails.emergencyContactNumber}</td>
+     
+      
+      {/* ************Address details******************* */}
+      <td>{data.addressDetails.address}</td>
+        <td>{data.addressDetails.state}</td>
+        <td>{data.addressDetails.city}</td>
+        <td>{data.addressDetails.country}</td>
+        <td>{data.addressDetails.pincode}</td>
+        {/* ***************Others details***************** */}
+       
+        <td>{data.otherDetails.occupation}</td>
+        <td>{data.otherDetails.religion}</td>
+        <td>{data.otherDetails.maritalStatus}</td>
+        <td>{data.otherDetails.bloodGroup}</td>
+        <td>{data.otherDetails.nationality}</td>
+       
+       
+    </tr>
+</tbody>
+
+
+)}
+ 
+</table>
 
     </div>
   );

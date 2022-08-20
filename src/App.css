@@ -32,3 +32,136 @@
     transform: rotate(360deg);
   }
 } */
+
+
+input,
+select {
+  margin-left: 20px;
+  width: 220px;
+  padding: 0.35rem 0.5rem;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  border: 1px solid #727477;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  /* outline: none; */
+}
+
+input:focus,
+select:focus {
+  border-color: #4299e1;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #b9bcc1;
+}
+
+/* *************** ID ************************* */
+#name {
+  width: 25%;
+  margin-right: 32px;
+}
+
+#ageField {
+  width: 25%;
+  margin-right: 15px;
+
+
+}
+
+#govt-issued-id {
+  margin-left: 142px;
+}
+
+#govt-id {
+  width: 31%;
+}
+
+#guardian-level {
+  width: 10%;
+}
+
+#guardian-level-name {
+  width: 12%;
+}
+
+#guardian-email {
+  margin-left: 32px;
+}
+
+#emergency-contact-number-label {
+  margin-left: 39px;
+}
+
+#emergencyContactNumber {
+  margin-left: 3%;
+}
+
+#address {
+  width: 25%;
+  margin-right: 31px;
+}
+
+#state {
+  width: 27%;
+  margin-right: 1%;
+}
+
+#city-field {
+  width: 23%;
+}
+
+#pincode {
+  margin-left: 10.5%;
+}
+
+#occupation {
+  width: 11%;
+  margin-right: 2%;
+}
+
+#religion {
+  width: 14%;
+  margin-right: 2%;
+}
+
+#marital-status-field {
+  margin-right: 2%;
+}
+
+#bloodGroup {
+  width: 15%;
+}
+
+#nationality {
+  width: 12%;
+  margin-left: 2%;
+}
+
+
+
+#submit {
+  width: 120px;
+  height: 60px;
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 3px;
+  margin-left: 35px;
+
+}
+
+#cencel {
+  width: 120px;
+  height: 60px;
+  color: red;
+  border: 1px solid rgb(230, 84, 84);
+  border-radius: 3px;
+}
+
+#button-submit-cencel {
+  display: flex;
+  justify-content: end;
+  margin-right: 90px;
+}
