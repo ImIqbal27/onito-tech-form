@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import CErrorMessage from './components/CErrorMessage';
 import Star from './components/Star';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const validateSchema = yup.object({ 
@@ -67,7 +69,10 @@ function App() {
 
           var newFormData = [...formData, values];
           setFormData(newFormData);
-           console.log(formData);
+          toast.success("Successfully added !", {
+            position: toast.POSITION.TOP_CENTER
+          });
+          console.log(formData);
            }}>
 
           {(values)=>(
@@ -79,10 +84,10 @@ function App() {
               <label>Name<Star /></label>
               <Field type="text" name="personalDetails.name" id="name" placeholder="Enter Name" />
               <CErrorMessage name="personalDetails.name"  />
-             
+              
               <label>Date of Birth or Age<Star /></label>
               <Field type="text" name="personalDetails.age" placeholder="DD/MM/YYYY  or Age in Years" id="ageField"/>  
-              {/* <CErrorMessage  name="personalDetails.age" />  */}
+              <CErrorMessage  name="personalDetails.age" /> 
 
               <label>Sex<Star /></label>
               <Field as="select" name="personalDetails.sex">
@@ -90,7 +95,7 @@ function App() {
                    <option value="male">Male</option>
                    <option value="female">Female</option>
                  </Field>   <br /> <br />
-                 {/* <CErrorMessage name="personalDetails.sex" />   */}
+                 <CErrorMessage name="personalDetails.sex" />  
                  
               
               <label>Mobile </label>
@@ -98,8 +103,9 @@ function App() {
               <label id="govt-issued-id">Govt Issued ID </label>
               <Field as="select" name="personalDetails.govtIssuedIdType" >
                    <option value=""> ID Type   </option>
-                   <option value="id-1">Id -1</option>
-                   <option value="id-2">Id -2</option>
+                   <option value="Aadhaar Card">Aadhaar Card</option>
+                   <option value="Driving License">Driving License</option>
+                   <option value="CGHS/ECHS Card">CGHS/ECHS Card</option>
                  </Field>  
                  <Field type="number" name="personalDetails.govtIssuedId" placeholder="Enter Govt Id" id="govt-id"/>
                   <br />
@@ -107,11 +113,12 @@ function App() {
 
 {/* *************************** Contact Details ********************************************** */}
                 <strong><u>Contact Details </u></strong><br /><br />
-                <label>Guardian </label>
+                <label>Guardian Details</label>
                 <Field as="select" name="contactDetails.guardianLevel"  id="guardian-level">
                    <option value=""> Enter level  </option>
-                   <option value="level-1">level-1</option>
-                   <option value="level-2">level-2</option>
+                   <option value="Level-1">Level-1</option>
+                   <option value="Level-2">Level-2</option>
+                   <option value="Level-3">Level-3</option>
                  </Field>  
                  <Field type="text" name="contactDetails.guardianName" placeholder="Enter Guardian Name" id="guardian-level-name"/>
 
@@ -178,10 +185,10 @@ function App() {
                  <label htmlFor="">Religion</label>
                  <Field as="select" name="otherDetails.religion" id="religion">
                    <option value=""> Enter religion  </option>
-                   <option value="religion-1">Religion-1</option>
-                   <option value="religion-2">Religion-2</option>
-                   <option value="religion-3">Religion-3</option>
-                   <option value="religion-4">Religion-4</option>
+                   <option value="Islam">Islam </option>
+                   <option value="Hinduism ">Hinduism </option>
+                   <option value="Christianity ">Christianity </option>
+                   <option value="Buddhism ">Buddhism </option>
                  </Field>  
 
 
@@ -304,7 +311,7 @@ function App() {
 )}
  
 </table>
-
+<ToastContainer />
     </div>
   );
 }

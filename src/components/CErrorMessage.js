@@ -1,9 +1,10 @@
 import React from 'react';
 import {  ErrorMessage } from 'formik';
+import { toast } from 'react-toastify';
 
 const CErrorMessage = ({name}) => {
     return (
-       <ErrorMessage  name = {name} />
+       <small style={{color:"red"}}> <ErrorMessage  name = {name} /> </small>
     );
 };
 

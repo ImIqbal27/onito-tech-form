@@ -62,7 +62,7 @@ select::placeholder {
 }
 
 #govt-id {
-  width: 31%;
+  width: 31.5%;
 }
 
 #guardian-level {
@@ -78,11 +78,11 @@ select::placeholder {
 }
 
 #emergency-contact-number-label {
-  margin-left: 39px;
+  margin-left: 15px;
 }
 
 #emergencyContactNumber {
-  margin-left: 3%;
+  /* margin-left: 1%; */
 }
 
 #address {
