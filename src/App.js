@@ -197,7 +197,7 @@ function App() {
                  <Field as="select" name="otherDetails.bloodGroup" id="bloodGroup">
                    <option value=""> Group  </option>
                    <option value="A+">A+</option>
-                   <option value="A-">A</option>
+                   <option value="A-">A-</option>
                    <option value="AB+">AB+</option>
                    <option value="AB-">AB-</option>
                    <option value="O+">O+</option>
@@ -228,8 +228,8 @@ function App() {
 
       <br />  <br />
 {/* ********************************** Table Data ********************************************* */}
-<legend class="text-center"> User Information  </legend>
-<table  class="table table-striped table-bordered table-hover table-dark">
+<legend  className="text-center"> User Information  </legend>
+<table   className="table table-striped table-bordered table-hover table-dark">
   
   <thead>
     <tr>
