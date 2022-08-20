@@ -1,10 +1,19 @@
 import './App.css';
 import { Formik , Form , Field   } from 'formik';
+import * as yup from 'yup';
 import CErrorMessage from './components/CErrorMessage';
 import Star from './components/Star';
 
 
+const validateSchema = yup.object({ 
+  personalDetails: yup.object({
+    name: yup.string().required("Name is required !"),
+    age: yup.string().required("Age is required !"),
+    sex: yup.string().required("Sex is required !"),
+    
+  }),
 
+})
 
 function App() {
  
